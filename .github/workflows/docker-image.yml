@@ -22,7 +22,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/tunarr:latest .
+          docker build -f build.dockerfile -t ghcr.io/${{ github.repository_owner }}/tunarr:latest .
 
       - name: Push Docker image to GitHub Container Registry
         run: |
