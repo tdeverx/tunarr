@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
@@ -22,7 +22,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -f build.dockerfile -t ghcr.io/${{ github.repository_owner }}/tunarr:latest .
+          docker build -f build.Dockerfile -t ghcr.io/${{ github.repository_owner }}/tunarr:latest .
 
       - name: Push Docker image to GitHub Container Registry
         run: |
